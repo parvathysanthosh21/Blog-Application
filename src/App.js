@@ -8,19 +8,24 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import BlogsView from './Pages/BlogsView';
 import Auth from './Components/Auth';
+import { useContext, useState } from 'react';
+import { tokenAuthorisationContext } from './context/TokenAuth';
 
 function App() {
+  const {isAuthorised, setAuthorised} = useContext(tokenAuthorisationContext)
+
+  const [loginResponse,setLoginResponse] = useState(false)
   return (
     <div>
-      <Header/>
+      <Header loginResponse={loginResponse}/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/login' element={<Auth/>}/>
+      <Route path='/login' element={<Auth setLoginResponse={setLoginResponse}/>}/>
       <Route path='/register' element={<Auth register/>}/>
       <Route path='/dashboard' element={<Dashboard/>}/>
-      <Route path='/allblogs' element={<AllBlogs/>}/>
-      <Route path='/blogsview' element={<BlogsView/>}/>
-      <Route path='/userprofile' element={<UserProfile/>}/>
+      <Route path='/blogsview/:_id' element={<BlogsView/>}/>
+      <Route path='/allblogs' element={ isAuthorised? <AllBlogs/>:<Home/>}/>
+      <Route path='/userprofile' element={ isAuthorised? <UserProfile/>:<Home/>}/>
        </Routes>
        <Footer/>
     </div>
