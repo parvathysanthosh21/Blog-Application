@@ -10,6 +10,7 @@ import BlogsView from './Pages/BlogsView';
 import Auth from './Components/Auth';
 import { useContext, useState } from 'react';
 import { tokenAuthorisationContext } from './context/TokenAuth';
+import Profile from './Pages/Profile';
 
 function App() {
   const {isAuthorised, setAuthorised} = useContext(tokenAuthorisationContext)
@@ -26,6 +27,7 @@ function App() {
       <Route path='/blogsview/:_id' element={<BlogsView/>}/>
       <Route path='/allblogs' element={ isAuthorised? <AllBlogs/>:<Home/>}/>
       <Route path='/userprofile' element={ isAuthorised? <UserProfile/>:<Home/>}/>
+      <Route path='/profile/:userId' element={<Profile/>}/>
        </Routes>
        <Footer/>
     </div>

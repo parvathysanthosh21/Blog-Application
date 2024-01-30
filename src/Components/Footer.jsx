@@ -15,7 +15,7 @@ function Footer() {
             </Link>
            
   <h6>
-              Designed and built with all the love in the world by the Blog team with the help of our contributors.
+              Designed and built with all the love in the world by the TNO team with the help of our contributors.
     
   </h6><h6>Code licensed Blog, docs CC BY 3.0.</h6>
   <h6>Currently v5.3.2.</h6>
@@ -25,7 +25,7 @@ function Footer() {
           <h5>Links</h5>
   <Link to={"/"} style={{textDecoration:'none', color:'white'}}>Landing page</Link>
   <Link to={"/"} style={{textDecoration:'none', color:'white'}}>Home</Link>
-  <Link to={"/"} style={{textDecoration:'none', color:'white'}}>Watch History</Link>
+  <Link to={"/"} style={{textDecoration:'none', color:'white'}}>All News</Link>
   
         </div>
         <div className="guides d-flex justify-content-center flex-column flex-wrap text-light">

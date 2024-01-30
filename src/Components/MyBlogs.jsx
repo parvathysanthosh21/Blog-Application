@@ -61,7 +61,7 @@ const reqHeader = {
           <Card style={{ width: '22rem' }}>
             <Card.Img variant="top" src={blog?`${BASE_URL}/uploads/${blog?.blogImage}`:"https://imagedelivery.net/wKQ19LTSBT0ARz08tkssqQ/www.courthousenews.com/2023/06/meta-logo-vivatech-show.jpg/w=1880"} alt="blogimage" />
             <Card.Body>
-              <Card.Title>{blog.category}</Card.Title>
+              <Card.Title>{(blog.category).slice(0,50)}</Card.Title>
               <h3 className='fw-bolder'><Link className='text-dark' style={{ textDecoration: hover ? 'underline' : 'none' }} to={`/blogsview/${blog?._id}`}>{blog.title}</Link></h3>
               <Card.Text>
                 {(blog.content).slice(0,200)}....
@@ -70,8 +70,7 @@ const reqHeader = {
                 {blog.timeStamp}
               </Card.Text>
               <div className='me-auto d-flex align-items-end justify-content-end mt-3 mb-3'>
-               <button className='btn'> <i class="fa-regular fa-heart me-1"></i></button>
-                <button className='btn'><i class="fa-regular fa-message me-1"></i></button>
+           
                 <EditBlog blog={blog}/>
                 <button onClick={()=>handleDelete(blog._id)} className='btn'><i class="fa-solid fa-trash"></i></button>
               </div>

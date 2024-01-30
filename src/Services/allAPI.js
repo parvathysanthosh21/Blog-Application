@@ -50,3 +50,19 @@ export const deleteBlogAPI = async(blogId,reqHeader)=>{
         return await commonAPI("DELETE",`${BASE_URL}/blog/remove/${blogId}`,{},reqHeader)
 }
 
+// edit profile
+ 
+export const editProfileAPI = async(reqBody,reqHeader)=>{
+        return await commonAPI("PUT",`${BASE_URL}/user/edit`,reqBody,reqHeader)
+}
+
+// getuserProfile
+export const getUserProfileAPI = async(id)=>{
+        return await commonAPI("GET",`${BASE_URL}/user/view/${id}`,"","")
+    }
+
+    
+// getprofileblogs
+export const getUserBlogsAPI = async(id)=>{
+        return await commonAPI("GET",`${BASE_URL}/user/blogs/${id}`,"","")
+    }

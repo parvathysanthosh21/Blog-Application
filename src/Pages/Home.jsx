@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
-import techimage from '../Assets/tech1.webp'
 import BlogCard from '../Components/BlogCard'
 import { Link } from 'react-router-dom'
 import { homeBlogsAPI } from '../Services/allAPI'
@@ -23,7 +22,7 @@ function Home() {
     <>
       {/* landing section */}
       <div style={{ width: '100%', height: '90vh', backgroundColor: '#fff' }}>
-        <Row className='align-items-center p-5' style={{ marginTop: '20%' }}>
+        <Row className='align-items-center p-5' style={{ marginTop: '10%' }}>
           <Col sm={12} md={6}>
             <h1 style={{ color: 'black', fontSize: '60px', fontWeight: '700', letterSpacing: '5px' }}>TNO</h1>
             <h3>TECH NEWS ONLINE</h3>
@@ -31,7 +30,7 @@ function Home() {
           </Col>
           <Col style={{ marginRight: '150px' }}>
 
-            <img style={{ height: '100px' }} src={techimage} alt="" />
+            <img style={{ height: '400px' }} src="https://images.moneycontrol.com/static-mcnews/2022/04/shutterstock_767487700-1-770x433.png" alt="" />
 
 
           </Col>

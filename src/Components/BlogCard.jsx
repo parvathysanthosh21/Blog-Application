@@ -13,14 +13,11 @@ function BlogCard({blog}) {
   <img style={{width:'350px'}} src={blog?`${BASE_URL}/uploads/${blog?.blogImage}`:"https://imagedelivery.net/wKQ19LTSBT0ARz08tkssqQ/www.courthousenews.com/2023/06/meta-logo-vivatech-show.jpg/w=1880"} alt="blogimage" />
  </div>
  <div className='ms-5'>
-  <h6>{blog?.category}</h6>
+  <h6 className='mt-5'>{blog?.category}</h6>
   <h3 className='fw-bolder'><Link className='text-dark'  style={{textDecoration:hover ? 'underline':'none'}} to={`/blogsview/${blog?._id}`}>{blog.title}</Link></h3>
 
   <h6>By {blog?.username}</h6>
-  <div className='me-auto d-flex align-items-end justify-content-start mt-5'>
-               <i class="fa-regular fa-heart me-3"></i>
-               <i class="fa-regular fa-message"></i>
-          </div>
+  
  </div>
 </div>
 }
